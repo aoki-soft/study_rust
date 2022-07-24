@@ -3,10 +3,8 @@ mod logger;
 
 use tracing::*;
 
-use crate::logger::init_logger;
-
-pub fn main() {
-    init_logger();
+fn main() {
+    logger::init();
     
     info!("Hello, world!");
 }

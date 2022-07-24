@@ -2,7 +2,7 @@ use tracing::*;
 use tracing_subscriber::fmt::format::FmtSpan;
 use time::UtcOffset;
 
-pub fn init_logger() {
+pub fn init() {
  // 時刻フォーマットの設定
  let offset = UtcOffset::current_local_offset().expect("should get local offset!");
  let time_format = time::format_description::well_known::Rfc3339;

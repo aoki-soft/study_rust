@@ -6,8 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-speculate = "*"
-rstest = "*"
+tracing = "*"
+tracing-subscriber = {version = "*", features = ["fmt", "std", "time"] }
+time = {version = "*", features = ["local-offset", "macros"] }
+
 
 [devdependencies]
-cargo-llvm-cov = "*"

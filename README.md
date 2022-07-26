@@ -15,3 +15,19 @@ cargo llvm-cov --open
 rustup component add llvm-tools-preview
 cargo install cargo-llvm-cov
 ```
+
+```
+cargo bench
+```
+
+```
+cargo doc
+```
+
+```
+cargo fmt
+```
+
+```
+cargo clippy
+```

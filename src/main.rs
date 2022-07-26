@@ -1,11 +1,9 @@
-mod add;
-mod logger;
-
+use study_rust::logger;
 use tracing::*;
 
 fn main() {
     logger::init();
-    
+
     info!("Hello, world!");
 }
 

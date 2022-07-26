@@ -9,6 +9,13 @@ edition = "2021"
 tracing = "*"
 tracing-subscriber = {version = "*", features = ["fmt", "std", "time"] }
 time = {version = "*", features = ["local-offset", "macros"] }
+criterion = "*"
 
 
-[devdependencies]
+[lib]
+name = "study_rust"
+path = "src/lib.rs"
+
+[[bench]]
+name = "benchmark"
+harness = false

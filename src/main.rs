@@ -1,17 +1,5 @@
-use study_rust::logger;
-use tracing::*;
+use anyhow::Result;
 
-fn main() {
-    logger::init();
-
-    info!("Hello, world!");
-}
-
-#[cfg(test)]
-mod tests {
-    use super::main;
-    #[test]
-    fn it_works() {
-        main();
-    }
+fn main() -> Result<()> {
+    study_rust::main()
 }

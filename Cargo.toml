@@ -10,6 +10,7 @@ tracing = "*"
 tracing-subscriber = {version = "*", features = ["fmt", "std", "time"] }
 time = {version = "*", features = ["local-offset", "macros"] }
 criterion = "*"
+anyhow = "*"
 
 
 [lib]

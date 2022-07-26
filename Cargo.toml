@@ -11,6 +11,10 @@ tracing-subscriber = {version = "*", features = ["fmt", "std", "time"] }
 time = {version = "*", features = ["local-offset", "macros"] }
 criterion = "*"
 anyhow = "*"
+axum = { version = "*", features = ["multipart"] }
+tokio = { version = "*", features = [ "full" ] }
+serde_json = "*"
+serde = { version = "*", features = ["derive"] }
 
 
 [lib]

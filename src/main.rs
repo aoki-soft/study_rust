@@ -1,5 +1,6 @@
 use anyhow::Result;
 
-fn main() -> Result<()> {
-    study_rust::main()
+#[tokio::main]
+async fn main() -> Result<()> {
+    study_rust::lib_main::main().await
 }

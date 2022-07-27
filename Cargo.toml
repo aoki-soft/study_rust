@@ -15,7 +15,8 @@ axum = { version = "*", features = ["multipart"] }
 tokio = { version = "*", features = [ "full" ] }
 serde_json = "*"
 serde = { version = "*", features = ["derive"] }
-
+dotenv = "*"
+envy = "*"
 
 [lib]
 name = "study_rust"

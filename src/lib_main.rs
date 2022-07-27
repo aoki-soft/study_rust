@@ -10,9 +10,17 @@ use std::net::SocketAddr;
 use crate::logger;
 use anyhow::Result;
 
+#[derive(Deserialize, Debug)]
+struct Config {
+    listen_port: u16,
+}
+
+
 pub async fn main() -> Result<()> {
-    // initialize tracing
+    dotenv::dotenv()?;        
     logger::init();
+
+    let config = envy::from_env::<Config>()?;
 
     // build our application with a route
     let app = Router::new()
@@ -21,9 +29,10 @@ pub async fn main() -> Result<()> {
         // `POST /users` goes to `create_user`
         .route("/users", post(create_user));
 
+    tracing::info!("{}", config.listen_port);
     // run our app with hyper
     // `axum::Server` is a re-export of `hyper::Server`
-    let addr = SocketAddr::from(([127, 0, 0, 1], 4000));
+    let addr = SocketAddr::from(([127, 0, 0, 1], config.listen_port));
     tracing::debug!("listening on {}", addr);
     axum::Server::bind(&addr)
         .serve(app.into_make_service())
